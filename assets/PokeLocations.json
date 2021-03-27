@@ -1,0 +1,31 @@
+{
+   "pokemon":[
+         {
+            "name":"charmander",
+            "version":[
+              {
+              "red": "starter",
+              "black2": "trade"
+              }
+            ]
+         },
+         {
+            "name":"bulbasaur",
+            "version":[
+              {
+              "green": "starter",
+              "red": "trade"
+              }
+            ]
+         },
+         {
+            "name":"dewpider",
+            "version":[
+              {
+              "moon": "water",
+              "sword": "trade"
+              }
+            ]
+         }
+      ]
+   }
