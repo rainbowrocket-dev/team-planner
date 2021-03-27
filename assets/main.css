@@ -1,0 +1,10 @@
+/* This is just CSS for testing and building the app, change this later */
+body {
+  margin:0 auto;
+  max-width: 600px;
+  background-color:#F8F8F8;
+  line-height: 1.5;
+  font-size: 18px;
+  font-family:"Open Sans", sans-serif;
+  color:RGBA(0,0,0,.7);
+}

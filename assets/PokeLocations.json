@@ -4,8 +4,19 @@
             "name":"charmander",
             "version":[
               {
-              "red": "starter",
-              "black2": "trade"
+              "name": "red",
+              "location": "starter",
+              "foundAs": "charmander",
+              "types":[
+                {
+                  "typeOne": "fire",
+                  "typeTwo": "flying"
+                }
+              ]
+              },
+              {
+              "name": "yellow",
+              "location": "trade"
               }
             ]
          },
@@ -13,8 +24,12 @@
             "name":"bulbasaur",
             "version":[
               {
-              "green": "starter",
-              "red": "trade"
+              "name": "green",
+              "location": "starter"
+              },
+              {
+              "name": "red",
+              "location": "trade"
               }
             ]
          },
@@ -22,8 +37,12 @@
             "name":"dewpider",
             "version":[
               {
-              "moon": "water",
-              "sword": "trade"
+              "name": "moon",
+              "location": "water"
+              },
+              {
+              "name": "sword",
+              "location": "sand"
               }
             ]
          }

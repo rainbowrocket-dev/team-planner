@@ -24,7 +24,7 @@ function initialLoad(pokemon) {
     // For amount of pokemon in url up to 6
     for (var i = 0; i < preLoaded.length && i < 6; i += 1) {
       // Adding all Pokemon in the url, going to have to double check this against the JSON later on but I don't have that made yet; right now it just tosses them in the dom
-       $(".team").append(preLoaded[i]);
+       iChooseYou(preLoaded[i]);
     }
   }
   pokeLocations = pokemon;
@@ -34,17 +34,23 @@ function initialLoad(pokemon) {
 function populate(newGame) {
   window.location.hash = newGame;
   game[0] = newGame;
-  console.log(pokeLocations);
+  availablePokemon();
 }
 
 // Now this one is FUCKED UP, essentially I need to generate a list of all the available pokemon, based on the chosen game, and I have chosen to NOT make 20+ seperate JSON files for each game because that would be far more redundant than this generator:
 function availablePokemon() {
-  console.log(pokeLocations);
-  var available = $.grep(pokeLocations.pokemon, function (element, index) { // AYO THIS SHIT BROKEN <--------- bc JSON is not correctly mADE DUMBASS
-    if (element.version[0] == game[0]) {
-      return element.version[0];
+  var available = $.grep(pokeLocations.pokemon, function (element, index) {
+    for (var i = 0; i < element.version.length; i +=1) {
+      if (element.version[i].name == game[0]) {
+        return element.version[i].name;
+      }
     }
   });
-  console.log(available);
-  $(".available").append(available[0].name);
+  for (var i = 0; i < available.length; i += 1) {
+    $(".available").append("<input type=\"checkbox\" id=\"" + available[i].name + "Choice\" name=\"available\" value=\"" + available[i].name + "\" onselect=\"iChooseYou(value)\"><label for=\"" + available[i].name + "Choice\"> " + available[i].name + "<br>");
+  }
+}
+
+function iChooseYou(choice) {
+  $(".selected").append("<input type=\"checkbox\" id=\"" + choice + "Chosen\" name=\"selected\" value=\"" + choice + "\"><label for=\"" + choice + "Chosen\"> " + choice + "<br>");
 }
