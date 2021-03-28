@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: popsiclestick/gist-sync-action@v1.2.0
+        id: sync
+        with:
+          auth: ${{ ETHERIA }}
+          gist_url: https://gist.github.com/higby/d5a9f8acbcf68ce3d31014f1effe29f6
+          gist_title: pokeLocations.json
+          gist_description:  lists every pokemon location - [WIP linked w/ github.com/higby/team-planner] 
+          github_file: pokeLocations.json
